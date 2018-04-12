@@ -33,10 +33,10 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FA
   # Use parallel computing to convert strings if parallel is TRUE
   if(parallel)
   {
-    no_cores <- detectCores() - 1  # Get the number of available string
-    cl <- makeCluster(no_cores)   # Initiate cluster
+    no_cores <- parallel::detectCores() - 1  # Get the number of available string
+    cl <- parallel::makeCluster(no_cores)   # Initiate cluster
     pinyin <- parallel::parSapply(cl, X = Chin.strs, FUN = ChStr2py, pylibnew)
-    stopCluster(cl)
+    parallel::stopCluster(cl)
     return(pinyin)
   } else {
     sapply(Chin.strs, ChStr2py, pylibnew)

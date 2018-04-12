@@ -27,10 +27,10 @@ ChStr2fc <- function(Chin.strs = "", sep = "_", parallel = FALSE)
   # Use parallel computing to convert strings if parallel is TRUE
   if(parallel)
   {
-    no_cores <- detectCores() - 1  # Get the number of available string
-    cl <- makeCluster(no_cores)   # Initiate cluster
+    no_cores <- parallel::detectCores() - 1  # Get the number of available string
+    cl <- parallel::makeCluster(no_cores)   # Initiate cluster
     fccode <- parallel::parSapply(cl, X = Chin.strs, FUN = ChStr2fc, FClib)
-    stopCluster(cl)
+    parallel::stopCluster(cl)
     return(fccode)
   } else {
     sapply(Chin.strs, ChStr2fc, FClib)
