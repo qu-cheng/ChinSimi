@@ -7,7 +7,7 @@
 #' @examples
 #' ChStr2fc(c("海上生明月","天涯共此时"))
 
-
+Sys.setlocale(category = 'LC_ALL', locale = 'chs')
 
 ChStr2fc <- function(Chin.strs = "", sep = "_", parallel = FALSE)
 {

@@ -9,6 +9,8 @@
 #' @examples
 #' ChStr2pyc(c("海上生明月","天涯共此时"))
 
+Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+
 ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FALSE, sep = "_", parallel = FALSE)
 {
   method <- match.arg(method)
