@@ -9,7 +9,7 @@
 #' @examples
 #' ChStr2pyc(c("海上生明月","天涯共此时"))
 
-Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+
 
 ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FALSE, sep = "_", parallel = FALSE)
 {
@@ -17,6 +17,8 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FA
 
   # Convert a string to pinyin
   ChStr2py <- function(Chin.str, pylibnew){
+    Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+
     Chin.char <- unlist(strsplit(Chin.str, split = "")) # divide the string to characters
 
     # convert a single character to pinyin
