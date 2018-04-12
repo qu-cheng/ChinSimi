@@ -11,7 +11,7 @@
 #' @keywords datasets
 #'
 #'
-#' @source \href{https://blog.csdn.net/chndata/article/details/41114771}{CSDN:基于音形码的中文字符串相似度算法}
+#' @source \href{https://blog.csdn.net/chndata/article/details/41114771}{CSDN}
 #'
 #' @examples
 #' data(pylibnew)

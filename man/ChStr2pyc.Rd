@@ -19,7 +19,7 @@ ChStr2pyc(Chin.strs = "", method = c("toneless", "tone"), multi = FALSE,
 \item{Chin.str}{The string need to be converted}
 }
 \value{
-pinyin code of \code{Chin.str} according to the lookup table in [基于音形码的中文字符串相似度算法](https://blog.csdn.net/chndata/article/details/41114771). The code is organized as Consonant + Main vowel + Connection Vowel + Tone. For example, these parts for mian4 is m, an, i, and 4, respectively.
+pinyin code of \code{Chin.str} according to the lookup table in https://blog.csdn.net/chndata/article/details/41114771. The code is organized as Consonant + Main vowel + Connection Vowel + Tone. For example, these parts for mian4 is m, an, i, and 4, respectively.
 }
 \description{
 Convert Chinese strings to pinyin.
