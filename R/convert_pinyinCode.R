@@ -7,7 +7,7 @@
 #' @param parallel Whether or not use parallel calculation
 #' @return pinyin code of \code{Chin.str} according to the lookup table in [基于音形码的中文字符串相似度算法](https://blog.csdn.net/chndata/article/details/41114771). The code is organized as Consonant + Main vowel + Connection Vowel + Tone. For example, these parts for mian4 is m, an, i, and 4, respectively.
 #' @examples
-#' ChStr2py(c("海上生明月","天涯共此时"))
+#' ChStr2pyc(c("海上生明月","天涯共此时"))
 
 ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FALSE, sep = "_", parallel = FALSE)
 {
