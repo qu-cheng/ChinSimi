@@ -25,5 +25,5 @@ pinyin code of \code{Chin.str} according to the lookup table in [基于音形码
 Convert Chinese strings to pinyin.
 }
 \examples{
-ChStr2py(c("海上生明月","天涯共此时"))
+ChStr2pyc(c("海上生明月","天涯共此时"))
 }
