@@ -19,6 +19,7 @@ ChStr2fc <- function(Chin.strs = "", sep = "_", parallel = FALSE)
     # convert a single character to pinyin
     ChChar2fc <- function(Chin.char){
       ChCharfc <- FClib[[Chin.char]]
+      if(length(ChCharfc) == 0) ChCharfc = Chin.char
       return(ChCharfc)
     }
 
