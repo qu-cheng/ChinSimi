@@ -23,10 +23,14 @@ ChStr2py <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FAL
     # convert a single character to pinyin
     ChChar2Py <- function(Chin.char){
       ChCharpy <- pylib[[Chin.char]]
-      ChCharpy <- switch(method, tone = ChCharpy, toneless = gsub("[1-4]","", ChCharpy))
-      if(multi){
-        ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
-      }
+      if(length(ChCharpy)==0){
+        ChCharpy <- Chin.char
+        }else{
+          ChCharpy <- switch(method, tone = ChCharpy, toneless = gsub("[1-4]","", ChCharpy))
+          if(multi){
+            ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
+          }
+        }
       return(ChCharpy)
     }
 
