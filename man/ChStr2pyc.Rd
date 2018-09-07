@@ -4,8 +4,8 @@
 \alias{ChStr2pyc}
 \title{Convert Chinese strings to pinyin.}
 \usage{
-ChStr2pyc(Chin.strs = "", method = c("toneless", "tone"), multi = FALSE,
-  sep = "_", parallel = FALSE)
+ChStr2pyc(Chin.strs = "", method = c("toneless", "tone"),
+  multi = FALSE, sep = "_", parallel = FALSE)
 }
 \arguments{
 \item{method}{Whether the output should be toned or toneless.}
