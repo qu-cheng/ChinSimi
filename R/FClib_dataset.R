@@ -15,6 +15,6 @@
 #'
 #' @examples
 #' data(FClib)
-#' FClib[['็จ']]
+#' FClib[['็จ']]
 #'
 "FClib"
