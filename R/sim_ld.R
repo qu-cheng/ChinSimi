@@ -7,7 +7,7 @@
 
 sim_ld <- function(s_1, s_2,aggr='mean'){ #inputs may be string vectors
     
-    if(class(s_1) == 'data.frame' | class(s_1) == 'matrix'){
+    if(any('data.frame','matrix') %in% class(s_1)){
       temp = lapply(1:ncol(s_1), function(c){
         sim_ld(s_1[,c],s_2[,c])
       })
