@@ -3,7 +3,7 @@
 \name{ChStr2fc}
 \alias{ChStr2fc}
 \title{Convert Chinese strings to four corner code.}
-\encoding{"UTF-8"}
+\encoding{'UTF-8'}
 \usage{
 ChStr2fc(Chin.strs = "", sep = "_", parallel = FALSE)
 }
