@@ -15,6 +15,5 @@
 #'
 #' @examples
 #' data(WBlib)
-#' WBlib[['绋']]
 #'
 "WBlib"

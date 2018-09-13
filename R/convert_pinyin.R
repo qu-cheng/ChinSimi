@@ -27,6 +27,7 @@ ChStr2py <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FAL
       if(multi){
         ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
       }
+      if(is.null(ChCharpy)) ChCharpy <- Chin.char
       return(ChCharpy)
     }
 

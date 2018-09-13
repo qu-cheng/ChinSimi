@@ -5,7 +5,7 @@
 #' @param parallel Whether or not use parallel calculation
 #' @return wubi code of \code{Chin.str}.
 #' @examples
-#' ChStr2wb(c("海上生明月","天涯共此时"))
+#' ChStr2wb(c("海上生明月1","天涯共此时"))
 
 
 
@@ -19,6 +19,7 @@ ChStr2wb <- function(Chin.strs = "", sep = "_", parallel = FALSE)
     # convert a single character to wubi code
     ChChar2wb <- function(Chin.char){
       ChCharwb <- WBlib[[Chin.char]]
+      if(is.null(ChCharwb)) ChCharwb <- Chin.char
       return(ChCharwb)
     }
 
