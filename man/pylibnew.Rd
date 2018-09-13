@@ -16,7 +16,6 @@ A lookup table for pinyin code of Chinese characters
 }
 \examples{
 data(pylibnew)
-pylibnew[['程']]
 
 }
 \keyword{datasets}

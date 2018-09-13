@@ -16,7 +16,6 @@ A lookup table for the wubi code of Chinese characters
 }
 \examples{
 data(WBlib)
-WBlib[['绋']]
 
 }
 \keyword{datasets}

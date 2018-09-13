@@ -20,5 +20,5 @@ wubi code of \code{Chin.str}.
 Convert Chinese strings to wubi code (based on radicals).
 }
 \examples{
-ChStr2wb(c("海上生明月","天涯共此时"))
+ChStr2wb(c("海上生明月1","天涯共此时"))
 }
