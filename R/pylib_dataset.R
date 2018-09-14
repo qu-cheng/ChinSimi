@@ -15,6 +15,5 @@
 #'
 #' @examples
 #' data(pylib)
-#' pylib[['程']]
 #'
 "pylib"

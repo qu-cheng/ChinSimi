@@ -24,6 +24,7 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FA
     # convert a single character to pinyin
     ChChar2Py <- function(Chin.char){
       ChCharpy <- pylibnew[[Chin.char]]
+
       if(length(ChCharpy)==0){
         ChCharpy <- Chin.char
         }else{
@@ -32,6 +33,7 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FA
           ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
             }
        }
+
       return(ChCharpy)
     }
 

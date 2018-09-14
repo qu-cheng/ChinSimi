@@ -15,6 +15,5 @@
 #'
 #' @examples
 #' data(FClib)
-#' FClib[['程']]
 #'
 "FClib"

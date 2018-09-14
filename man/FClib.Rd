@@ -16,7 +16,6 @@ A lookup table for the four corner code of Chinese characters
 }
 \examples{
 data(FClib)
-FClib[['程']]
 
 }
 \keyword{datasets}
