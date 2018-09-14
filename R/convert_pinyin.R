@@ -18,16 +18,22 @@ ChStr2py <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FAL
   # Convert a string to pinyin
   ChStr2py <- function(Chin.str, pylib){
     Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+    if(is.na(Chin.str)) return(NA)
     Chin.char <- unlist(strsplit(Chin.str, split = "")) # divide the string to characters
 
     # convert a single character to pinyin
     ChChar2Py <- function(Chin.char){
       ChCharpy <- pylib[[Chin.char]]
-      ChCharpy <- switch(method, tone = ChCharpy, toneless = gsub("[1-4]","", ChCharpy))
-      if(multi){
-        ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
-      }
-      if(length(ChCharpy)==0) ChCharpy <- Chin.char
+
+      if(length(ChCharpy)==0){
+        ChCharpy <- Chin.char
+        }else{
+          ChCharpy <- switch(method, tone = ChCharpy, toneless = gsub("[1-4]","", ChCharpy))
+          if(multi){
+            ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
+          }
+        }
+
       return(ChCharpy)
     }
 

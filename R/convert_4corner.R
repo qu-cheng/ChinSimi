@@ -14,12 +14,15 @@ ChStr2fc <- function(Chin.strs = "", sep = "_", parallel = FALSE)
   # Convert one string to four corner code
   ChStr2fc <- function(Chin.str, FClib){
     Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+    if(is.na(Chin.str)) return(NA)
     Chin.char <- unlist(strsplit(Chin.str, split = "")) # divide the string to characters
 
     # convert a single character to pinyin
     ChChar2fc <- function(Chin.char){
       ChCharfc <- FClib[[Chin.char]]
-      if(is.null(ChCharfc)) ChCharfc <- Chin.char
+
+      if(length(ChCharfc) == 0) ChCharfc = Chin.char
+
       return(ChCharfc)
     }
 

@@ -24,6 +24,4 @@ pinyin code of \code{Chin.str} according to the lookup table in https://blog.csd
 \description{
 Convert Chinese strings to pinyin.
 }
-\examples{
-ChStr2pyc(c("海上生明月","天涯共此时"))
-}
+
