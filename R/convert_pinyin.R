@@ -31,6 +31,8 @@ ChStr2py <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FAL
           ChCharpy <- switch(method, tone = ChCharpy, toneless = gsub("[1-4]","", ChCharpy))
           if(multi){
             ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
+          } else {
+            ChCharpy <- substr(ChCharpy, 1, gregexpr(pattern =',', ChCharpy)[[1]][1]-1)
           }
         }
 
