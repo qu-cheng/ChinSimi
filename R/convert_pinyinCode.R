@@ -28,7 +28,7 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FA
       if(length(ChCharpy)==0){
         ChCharpy <- Chin.char
         }else{
-          ChCharpy <- switch(method, tone = ChCharpy, toneless = substr(ChCharpy,1,3))
+          ChCharpy <- switch(method, tone = ChCharpy, toneless = paste(lapply(unlist(strsplit(ChCharpy,",")), function(x) substr(x,1,3)), collapse = ","))
           if(multi){
           ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
             }
