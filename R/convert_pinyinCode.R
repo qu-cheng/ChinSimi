@@ -11,7 +11,7 @@
 
 
 
-ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FALSE, sep = "_", parallel = FALSE)
+ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = TRUE, sep = "_", parallel = FALSE)
 {
   method <- match.arg(method)
 
@@ -31,7 +31,10 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = FA
           ChCharpy <- switch(method, tone = ChCharpy, toneless = paste(lapply(unlist(strsplit(ChCharpy,",")), function(x) substr(x,1,3)), collapse = ","))
           if(multi){
           ChCharpy <- ifelse(grepl(",", ChCharpy), paste0("[", ChCharpy, "]"),  ChCharpy)
-            }
+          } else {
+            # if multi = FALSE, only keep the first pronunciation
+            ChCharpy <- ifelse(grepl(",",ChCharpy), substr(ChCharpy, 1, gregexpr(pattern =',', ChCharpy)[[1]][1]-1), ChCharpy)
+          }
        }
 
       return(ChCharpy)
